@@ -76,9 +76,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             this.loadWorkspaceMenu();
             // Add our billboard to the menu (has name, url, picture of workspace)
             this.addBillboardToWorkspaceMenu();
-            
-            chilipeppr.publish('/com-chilipeppr-elem-flashmsg/flashmsg', "Recent Maintenance", "Hello!  We recently updated the GRBL workspace.  Please let us know if you have any issues.  If auto-level still does not work, please continue to use chilipeppr.com/imania But we'd really like to hear if it does! ", 15 * 1000);
-            
+
+            chilipeppr.publish('/com-chilipeppr-elem-flashmsg/flashmsg', "Recent Maintenance", "Hello!  We recently updated the GRBL workspace.  Please let us know if you have any issues.  If auto-level still does not work, please continue to use chilipeppr.com/imania. But we'd really like to hear if it does! ", 15 * 1000);
+
             // Setup an event to react to window resize. This helps since
             // some of our widgets have a manual resize to cleanly fill
             // the height of the browser window. You could turn this off and
@@ -298,7 +298,38 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                 });
 
 
+            // Macro
+            // com-chilipeppr-ws-macro
+            chilipeppr.load(
+                "#com-chilipeppr-ws-macro",
+                "http://raw.githubusercontent.com/chilipeppr/widget-macro/master/auto-generated-widget.html",
+                function() {
+                    //"http://fiddle.jshell.net/chilipeppr/ZJ5vV/show/light/", function () {
+                    cprequire(["inline:com-chilipeppr-widget-macro"], function(macro) {
+                        macro.init();
+                        // setup toggle button
+                        var alBtn = $('#com-chilipeppr-ws-menu .macro-button');
+                        var alDiv = $('#com-chilipeppr-ws-macro');
+                        alBtn.click(function() {
+                            if (alDiv.hasClass("hidden")) {
+                                // unhide
+                                alDiv.removeClass("hidden");
+                                alBtn.addClass("active");
+                                //autolevel.onDisplay();
+                            }
+                            else {
+                                alDiv.addClass("hidden");
+                                alBtn.removeClass("active");
+                                //autolevel.onUndisplay();
+                            }
+                            $(window).trigger('resize');
 
+                        });
+                    });
+                }); //End Macro
+
+
+            /*
             // Macro (original)
             // com-chilipeppr-ws-autolevel
             chilipeppr.load(
@@ -327,6 +358,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                     });
                 });
+                */
 
             /*
             // Macro (imania)
