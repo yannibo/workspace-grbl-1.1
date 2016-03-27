@@ -1440,8 +1440,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                         });
                 });
-
-
+                
+            /*
             // WebRTC Client com-chilipeppr-webrtcclient
             chilipeppr.load(
                 "com-chilipeppr-webrtcclient",
@@ -1455,6 +1455,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             webrtcclient.init();
                         });
                 });
+                */
 
             // Serial Port Selector
             // http://jsfiddle.net/chilipeppr/vetj5fvx/
