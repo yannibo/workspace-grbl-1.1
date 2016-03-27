@@ -241,7 +241,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             this.loadWorkspaceMenu();
             // Add our billboard to the menu (has name, url, picture of workspace)
             this.addBillboardToWorkspaceMenu();
-
+            
+            chilipeppr.publish('/com-chilipeppr-elem-flashmsg/flashmsg', "Recent Maintenance", "Hello!  We recently updated the GRBL workspace.  Please let us know if you have any issues.  If auto-level still does not work, please continue to use chilipeppr.com/imania But we'd really like to hear if it does! ", 15 * 1000);
+            
             // Setup an event to react to window resize. This helps since
             // some of our widgets have a manual resize to cleanly fill
             // the height of the browser window. You could turn this off and
@@ -461,7 +463,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                 });
 
 
-            
+
             // Macro (original)
             // com-chilipeppr-ws-autolevel
             chilipeppr.load(
@@ -490,7 +492,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                     });
                 });
-            
+
             /*
             // Macro (imania)
             // com-chilipeppr-ws-autolevel
@@ -1272,6 +1274,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                 });
 
+            /*
             //Axes Widget XYZA
             //This widget is locked at version 97 until upgrades can be tested with the override code.
             chilipeppr.load(
@@ -1467,8 +1470,35 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             });
                         });
                 });
+                */
 
 
+            chilipeppr.load(
+                "#com-chilipeppr-ws-macro",
+                "http://jsfiddle.net/forstuvning/3gmfmnna/8/show/light/",
+                function() {
+                    require(["inline:com-chilipeppr-widget-macro"], function(macro) {
+                        macro.init();
+                        // setup toggle button
+                        var alBtn = $('#com-chilipeppr-ws-gcode-menu .macro-button');
+                        var alDiv = $('#com-chilipeppr-ws-macro');
+                        alBtn.click(function() {
+                            if (alDiv.hasClass("hidden")) {
+                                // unhide
+                                alDiv.removeClass("hidden");
+                                alBtn.addClass("active");
+                                //autolevel.onDisplay();
+                            }
+                            else {
+                                alDiv.addClass("hidden");
+                                alBtn.removeClass("active");
+                                //autolevel.onUndisplay();
+                            }
+                            $(window).trigger('resize');
+
+                        });
+                    });
+                });
 
 
             // Serial Port Log Window
