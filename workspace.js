@@ -269,7 +269,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // com-chilipeppr-ws-autolevel
             // hiding auto leveller as unsure what features supported in grbl. will come back to this.
             // http:jsfiddle.net/jarret/uvVL6/
-
+            
             chilipeppr.load(
                 "#com-chilipeppr-ws-autolevel",
                 "http://jsfiddle.net/jarret/377aat1g/show/light/",
@@ -296,6 +296,26 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                     });
                 });
+            /*
+            // Inject new div to contain widget or use an existing div with an ID
+            $("body").append('<' + 'div id="myDivWidgetAutolevel"><' + '/div>');
+
+            chilipeppr.load(
+                "#myDivWidgetAutolevel",
+                "http://raw.githubusercontent.com/raykholo/grbl-widget-autolevel/master/auto-generated-widget.html",
+                function() {
+                    // Callback after widget loaded into #myDivWidgetAutolevel
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                        ["inline:com-chilipeppr-widget-autolevel"], // the id you gave your widget
+                        function(myObjWidgetAutolevel) {
+                            // Callback that is passed reference to the newly loaded widget
+                            console.log("Widget / Auto-Level just got loaded.", myObjWidgetAutolevel);
+                            myObjWidgetAutolevel.init();
+                        }
+                    );
+                }
+            );*/
 
 
             // Macro
@@ -461,7 +481,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         var that = this;
                         chilipeppr.load(
                             "#com-chilipeppr-ws-eagle",
-                            "http://fiddle.jshell.net/chilipeppr/do9cc5zh/show/light/",
+                            "http://raw.githubusercontent.com/chilipeppr/widget-eagle/master/auto-generated-widget.html",
                             function() {
                                 require(["inline:com-chilipeppr-widget-eagle"], function(eagle) {
                                     that.eagleInstance = eagle;
@@ -1142,7 +1162,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                 });
 
-            
+
             //Axes Widget XYZA
             //This widget is locked at version 97 until upgrades can be tested with the override code.
             chilipeppr.load(
@@ -1338,7 +1358,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             });
                         });
                 });
-                
+
 
 
             chilipeppr.load(
@@ -1441,7 +1461,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                         });
                 });
-                
+
             /*
             // WebRTC Client com-chilipeppr-webrtcclient
             chilipeppr.load(

@@ -206,10 +206,10 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
         id: "com-chilipeppr-workspace-grbl", // Make the id the same as the cpdefine id
         name: "Workspace / grbl", // The descriptive name of your widget.
         desc: `A ChiliPeppr Workspace grbl.`,
-        url: "http://raw.githubusercontent.com/wd77/workspace-grbl/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
-        fiddleurl: "http://ide.c9.io/wd77/workspace-grbl", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
-        githuburl: "http://github.com/wd77/workspace-grbl", // The backing github repo
-        testurl: "http://workspace-grbl-wd77.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
+        url: "http://raw.githubusercontent.com/raykholo/workspace-grbl/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        fiddleurl: "http://ide.c9.io/raykholo/workspace-grbl", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        githuburl: "http://github.com/raykholo/workspace-grbl", // The backing github repo
+        testurl: "http://workspace-grbl-raykholo.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
         /**
          * Contains reference to the Console widget object. Hang onto the reference
          * so we can resize it when the window resizes because we want it to manually
@@ -434,7 +434,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // com-chilipeppr-ws-autolevel
             // hiding auto leveller as unsure what features supported in grbl. will come back to this.
             // http:jsfiddle.net/jarret/uvVL6/
-
+            
             chilipeppr.load(
                 "#com-chilipeppr-ws-autolevel",
                 "http://jsfiddle.net/jarret/377aat1g/show/light/",
@@ -461,6 +461,26 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                     });
                 });
+            /*
+            // Inject new div to contain widget or use an existing div with an ID
+            $("body").append('<' + 'div id="myDivWidgetAutolevel"><' + '/div>');
+
+            chilipeppr.load(
+                "#myDivWidgetAutolevel",
+                "http://raw.githubusercontent.com/raykholo/grbl-widget-autolevel/master/auto-generated-widget.html",
+                function() {
+                    // Callback after widget loaded into #myDivWidgetAutolevel
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                        ["inline:com-chilipeppr-widget-autolevel"], // the id you gave your widget
+                        function(myObjWidgetAutolevel) {
+                            // Callback that is passed reference to the newly loaded widget
+                            console.log("Widget / Auto-Level just got loaded.", myObjWidgetAutolevel);
+                            myObjWidgetAutolevel.init();
+                        }
+                    );
+                }
+            );*/
 
 
             // Macro
@@ -626,7 +646,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         var that = this;
                         chilipeppr.load(
                             "#com-chilipeppr-ws-eagle",
-                            "http://fiddle.jshell.net/chilipeppr/do9cc5zh/show/light/",
+                            "http://raw.githubusercontent.com/chilipeppr/widget-eagle/master/auto-generated-widget.html",
                             function() {
                                 require(["inline:com-chilipeppr-widget-eagle"], function(eagle) {
                                     that.eagleInstance = eagle;
@@ -1307,7 +1327,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                 });
 
-            
+
             //Axes Widget XYZA
             //This widget is locked at version 97 until upgrades can be tested with the override code.
             chilipeppr.load(
@@ -1503,7 +1523,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             });
                         });
                 });
-                
+
 
 
             chilipeppr.load(
@@ -1606,7 +1626,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                         });
                 });
-                
+
             /*
             // WebRTC Client com-chilipeppr-webrtcclient
             chilipeppr.load(
