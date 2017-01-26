@@ -187,7 +187,7 @@ cprequire_test(["inline:com-clrtd-workspace-grbl-1-1"], function(ws) {
         );
     };
     loadFlashMsg();
-
+chilipeppr.publish('/com-chilipeppr-elem-flashmsg/flashmsg', "it load", "lol", 15 * 1000);
     // Init workspace
     ws.init();
 
